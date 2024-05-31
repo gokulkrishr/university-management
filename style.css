@@ -1,0 +1,296 @@
+/* Home.css */
+
+body{
+    background-color: black;
+    color: white;
+}
+
+
+.user_welcome{
+    text-align: center;
+ 
+}
+.well{
+    margin-left: 250px;
+}
+#admin-logo{
+    width: 250px;
+    height: 300px;
+    
+}
+
+#username{
+    font-size: 50px;
+    color: purple;
+    font-family: "Kode Mono", monospace;
+
+}
+.dashboard{
+    width:70%;
+    background-color: white;
+    height: 300px;
+    color: black;
+    margin-left:200px;
+    margin-top: 50px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
+   
+  
+ 
+}
+.admin-container {
+    display: flex;
+    
+}
+
+.sidebar {
+    width:250px;
+    background-color: black;
+    color: #ecf0f1;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+  
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    
+    
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+    
+}
+
+.sidebar ul li a {
+    color: purple;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+    box-shadow: 0 0 10px purple;
+    
+}
+
+.main-content {
+    margin-left:250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h1 {
+    margin-bottom: 10px;
+}
+/* Profile section styling */
+.profile {
+    display:inline-block;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    margin-left:300px;
+}
+
+.profile-picture img {
+    width: 200px;
+    height:200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right:300px;
+    margin-bottom: 50px;
+}
+
+.profile-details {
+    flex-grow: 1;
+    
+}
+
+.profile-details h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    margin-bottom: 10px;
+}
+
+.profile-details button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.profile-details button:hover {
+    background-color: #2980b9;
+}
+/* Main content styling */
+.main-content {
+    margin-left:600px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.main-content section {
+    display: none;
+}
+
+.main-content section#dashboard {
+    display: block;
+}
+
+/* Profile section styling */
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile-details {
+    margin-left: 20px;
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.profile-details p {
+    color: #777;
+}
+
+.profile-details button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #004080;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-details button:hover {
+    background-color: #003366;
+}
+
+/* Modal styling */
+#edit-profile-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin-top: 10px;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="email"],
+.modal-content form input[type="file"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content form button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #004080;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content form button[type="submit"]:hover {
+    background-color: #003366;
+}
+
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-details {
+        text-align: center;
+        margin-left: 0;
+    }
+}

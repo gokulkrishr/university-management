@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    background-color: rgb(0, 109, 128);
+    justify-content: space-between;
+    align-items: center;
+
+}
+ .navimage{
+    width: 100px;
+position: absolute;
+top:   2.px;
+left: 2%;
+
+}
+h1{
+    margin-left: 95px;
+    color: aliceblue;
+}
+ u1{
+display: flex;
+list-style-type: none;
+}
+nav li a{
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+}
+button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+}
+.register{
+    position: relative;
+    background-color: white;
+    border: none;
+    outline: none;
+    color: black;
+    cursor: pointer;
+        border-radius: 20px;
+          }
+.register:hover{
+    transform: scale(1.1);
+}

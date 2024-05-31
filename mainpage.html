@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="mainpage.css" rel="stylesheet">
+    <link rel="icon" href="icon.jpg" type="image/x-icon">
+    <title>UNIVERSITY MANAGEMENT SYSTEM</title>
+</head>
+<body>
+    <nav>
+        <button><a href=""><i class="fa-solid fa-bars"></i></a></button>
+        <h1>UNIVERSITY MANAGEMENT SYSTEM</h1>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="head">Menu</div>
+        <ul>
+            <li><a href="#" onclick="showSection('student-details')"><i class="fas fa-user-graduate"></i> Student Details</a></li>
+            <li><a href="#" onclick="showSection('faculty-details')"><i class="fas fa-user-group"></i> Faculty Details</a></li>
+            <li><a href="#" onclick="showSection('course-details')"><i class="fas fa-book"></i> Course</a></li>
+            <li><a href="#" onclick="showSection('fees-details')"><i class="fa-solid fa-money-check-dollar"></i> Fees Details</a></li>
+            <li><a href="Contact.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+            <li><a href="About.html"><i class="fas fa-info"></i> About</a></li> 
+            <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+    </div>
+    <div class="search">
+        <input type="text" id="searchInput" placeholder="search...">
+        <a href="#" onclick="performSearch()">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+    <div class="content">
+        <section id="student-details">
+            <h2>Student Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>GOKUL</td>
+                        <td>INFORMATION TECHNOLOGY</td>
+                        <td>gokul@gmail.com</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more student details here -->
+                </tbody>
+            </table>
+            <button onclick="uploadDetails('student')">Upload Student Details</button>
+            <form id="studentForm" onsubmit="addStudent(event)">
+                <input type="text" id="studentId" placeholder="Student ID" required>
+                <input type="text" id="studentName" placeholder="Name" required>
+                <input type="text" id="studentDept" placeholder="Department" required>
+                <input type="email" id="studentEmail" placeholder="Email" required>
+                <button type="submit">Add Student</button>
+            </form>
+        </section>
+
+        <section id="faculty-details">
+            <h2>Faculty Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Faculty ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>201</td>
+                        <td>SANGEETHA .MS</td>
+                        <td>INFORMATION TECHNOLOGY</td>
+                        <td>sangeetha@gmail.com</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more faculty details here -->
+                </tbody>
+            </table>
+            <button onclick="uploadDetails('faculty')">Upload Faculty Details</button>
+            <form id="facultyForm" onsubmit="addFaculty(event)">
+                <input type="text" id="facultyId" placeholder="Faculty ID" required>
+                <input type="text" id="facultyName" placeholder="Name" required>
+                <input type="text" id="facultyDept" placeholder="Department" required>
+                <input type="email" id="facultyEmail" placeholder="Email" required>
+                <button type="submit">Add Faculty</button>
+            </form>
+        </section>
+
+        <section id="course-details">
+            <h2>Course Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Department</th>
+                        <th>Course Fees</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C101</td>
+                        <td>PYTHON</td>
+                        <td>INFORMATION TECHNOLOGY</td>
+                        <td>$15000</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more course details here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="fees-details">
+            <h2>Fees Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Total Fees</th>
+                        <th>Paid</th>
+                        <th>Due</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>GOKUL</td>
+                        <td>$15000</td>
+                        <td>$14000</td>
+                        <td>$2000</td>
+                        <td>
+                            <button onclick="editRow(this)">Edit</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more fees details here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+  
+
+    <script>
+         function showSection(sectionId) {
+    const sections = document.querySelectorAll('.content section');
+    sections.forEach(section => {
+        section.style.display = (section.id === sectionId) ? 'block' : 'none';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSection('student-details');
+});
+
+function performSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const sections = document.querySelectorAll('.content section');
+    let found = false;
+
+    sections.forEach(section => {
+        const rows = section.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            let match = false;
+            cells.forEach(cell => {
+                if (cell.textContent.toLowerCase().includes(query)) {
+                    match = true;
+                }
+            });
+            row.style.display = match ? '' : 'none';
+        });
+
+        if (Array.from(rows).some(row => row.style.display === '')) {
+            section.style.display = 'block';
+            found = true;
+        } else {
+            section.style.display = 'none';
+        }
+    });
+
+    if (!found) {
+        alert('No matching records found');
+    }
+}
+
+function uploadDetails(type) {
+    const input = type === 'student' ? document.getElementById('studentUpload') : document.getElementById('facultyUpload');
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const contents = e.target.result;
+            const rows = contents.split('\n').map(row => row.split(','));
+            updateTable(type, rows);
+        };
+        reader.readAsText(file);
+    }
+}
+
+function updateTable(type, rows) {
+    const tbody = type === 'student' ? document.querySelector('#student-details tbody') : document.querySelector('#faculty-details tbody');
+    tbody.innerHTML = '';
+
+    rows.forEach(row => {
+        if (row.length > 1) {
+            const tr = document.createElement('tr');
+            row.forEach(cell => {
+                const td = document.createElement('td');
+                td.textContent = cell.trim();
+                tr.appendChild(td);
+            });
+            tr.innerHTML += `<td>
+                                <button onclick="editRow(this)">Edit</button>
+                                <button onclick="deleteRow(this)">Delete</button>
+                             </td>`;
+            tbody.appendChild(tr);
+        }
+    });
+}
+
+function addStudent(event) {
+    event.preventDefault();
+    const id = document.getElementById('studentId').value;
+    const name = document.getElementById('studentName').value;
+    const dept = document.getElementById('studentDept').value;
+    const email = document.getElementById('studentEmail').value;
+
+    const tbody = document.querySelector('#student-details tbody');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${id}</td><td>${name}</td><td>${dept}</td><td>${email}</td><td>
+                        <button onclick="editRow(this)">Edit</button>
+                        <button onclick="deleteRow(this)">Delete</button>
+                    </td>`;
+    tbody.appendChild(tr);
+
+    document.getElementById('studentForm').reset();
+}
+
+function addFaculty(event) {
+    event.preventDefault();
+    const id = document.getElementById('facultyId').value;
+    const name = document.getElementById('facultyName').value;
+    const dept = document.getElementById('facultyDept').value;
+    const email = document.getElementById('facultyEmail').value;
+
+    const tbody = document.querySelector('#faculty-details tbody');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${id}</td><td>${name}</td><td>${dept}</td><td>${email}</td><td>
+                        <button onclick="editRow(this)">Edit</button>
+                        <button onclick="deleteRow(this)">Delete</button>
+                    </td>`;
+    tbody.appendChild(tr);
+
+    document.getElementById('facultyForm').reset();
+}
+
+function editRow(button) {
+    const row = button.closest('tr');
+    const cells = row.querySelectorAll('td');
+    const id = cells[0].textContent;
+    const name = cells[1].textContent;
+    const dept = cells[2].textContent;
+    const email = cells[3].textContent;
+
+    // Assuming you want to edit student details
+    document.getElementById('studentId').value = id;
+    document.getElementById('studentName').value = name;
+    document.getElementById('studentDept').value = dept;
+    document.getElementById('studentEmail').value = email;
+
+    // Remove the row so it can be added back after editing
+    row.remove();
+}
+
+function deleteRow(button) {
+    const row = button.closest('tr');
+    row.remove();
+}
+
+// Logout functionality
+const logoutButton = document.getElementById("logout");
+logoutButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "login.html"; // Redirect to logout endpoint
+});
+
+
+    </script>
+</body>
+</html>
