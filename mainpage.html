@@ -160,39 +160,57 @@
         </form>
     
 </section>
+        <section id="fees-details">
+    <h2>Fees Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Total Fees</th>
+                <th>Paid</th>
+                <th>Due</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>GOKUL</td>
+                <td>$15000</td>
+                <td>$14000</td>
+                <td>$2000</td>
+                <td>
+                    <button onclick="editRow(this)">Edit</button>
+                    <button onclick="deleteRow(this)">Delete</button>
+                </td>
+            </tr>
+            <!-- Add more fees details here -->
+        </tbody>
+    </table>
+</section>
+
+<section id="upload-form">
+    <h2>Upload Fees Details</h2>
+    <form id="feesForm">
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" name="studentId" required><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="totalFees">Total Fees:</label>
+        <input type="text" id="totalFees" name="totalFees" required><br><br>
+        <label for="paid">Paid:</label>
+        <input type="text" id="paid" name="paid" required><br><br>
+        <label for="due">Due:</label>
+        <input type="text" id="due" name="due" required><br><br>
+        <button type="submit">Upload</button>
+    </form>
+</section>
 
 
 
         
-        <section id="fees-details">
-            <h2>Fees Details</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>Name</th>
-                        <th>Total Fees</th>
-                        <th>Paid</th>
-                        <th>Due</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>101</td>
-                        <td>GOKUL</td>
-                        <td>$15000</td>
-                        <td>$14000</td>
-                        <td>$2000</td>
-                        <td>
-                            <button onclick="editRow(this)">Edit</button>
-                            <button onclick="deleteRow(this)">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- Add more fees details here -->
-                </tbody>
-            </table>
-        </section>
+        
     </div>
   
 
@@ -339,6 +357,50 @@ logoutButton.addEventListener("click", function(event) {
     event.preventDefault();
     window.location.href = "login.html"; // Redirect to logout endpoint
 });
+
+        document.getElementById('courseForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const courseId = document.getElementById('courseId').value;
+        const courseName = document.getElementById('courseName').value;
+        const department = document.getElementById('department').value;
+        const courseFees = document.getElementById('courseFees').value;
+
+        const table = document.querySelector('#course-details table tbody');
+        const newRow = document.createElement('tr');
+
+        newRow.innerHTML = `
+            <td>${courseId}</td>
+            <td>${courseName}</td>
+            <td>${department}</td>
+            <td>${courseFees}</td>
+            <td>
+                <button onclick="editRow(this)">Edit</button>
+                <button onclick="deleteRow(this)">Delete</button>
+            </td>
+        `;
+
+        table.appendChild(newRow);
+
+        document.getElementById('courseForm').reset();
+    });
+
+    function editRow(button) {
+        const row = button.parentElement.parentElement;
+        const cells = row.children;
+
+        document.getElementById('courseId').value = cells[0].innerText;
+        document.getElementById('courseName').value = cells[1].innerText;
+        document.getElementById('department').value = cells[2].innerText;
+        document.getElementById('courseFees').value = cells[3].innerText;
+
+        row.remove();
+    }
+
+    function deleteRow(button) {
+        const row = button.parentElement.parentElement;
+        row.remove();
+    }
 
         document.getElementById('courseForm').addEventListener('submit', function(event) {
         event.preventDefault();
