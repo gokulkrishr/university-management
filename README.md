@@ -7,7 +7,7 @@
 - **Reshma S** - Readme File Update, Voice Over
 
 ## Title Description
-A University Management System (UMS) is a comprehensive software solution designed to streamline and automate various administrative and academic processes within a university. It integrates modules for student enrollment, course management, faculty assignments, examination scheduling, library services, financial operations, hostel administration, and more. By centralizing these functions, the UMS enhances operational efficiency, ensures accurate record-keeping, and improves communication among students, faculty, and administrative staff. With a user-friendly interface and robust reporting capabilities, the UMS supports informed decision-making and provides a seamless experience for all university stakeholders.A UMS can automate tasks abnd cover all aspects of a university
+A University Management System (UMS) is a comprehensive software solution designed to streamline and automate various administrative and academic processes within a university. It integrates modules for student enrollment, course management, faculty assignments, examination scheduling, library services, financial operations, hostel administration, and more. By centralizing these functions, the UMS enhances operational efficiency, ensures accurate record-keeping, and improves communication among students, faculty, and administrative staff. With a user-friendly interface and robust reporting capabilities, the UMS supports informed decision-making and provides a seamless experience for all university stakeholders.
 ## Technology Used
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Python Flask
