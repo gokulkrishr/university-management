@@ -26,7 +26,6 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="chat.html">CHAT</a></li>
-
         </ul>
     </nav>
     <div class="container">
@@ -61,17 +60,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>101</td>
-                        <td>GOKUL</td>
-                        <td>INFORMATION TECHNOLOGY</td>
-                        <td>gokul@gmail.com</td>
-                        <td>
-                            <button onclick="editRow(this)">Edit</button>
-                            <button onclick="deleteRow(this)">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- Add more student details here -->
+                    <!-- Student details will be added here from localStorage -->
                 </tbody>
             </table>
             <button onclick="uploadDetails('student')">Upload Student Details</button>
@@ -97,17 +86,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>201</td>
-                        <td>SANGEETHA .MS</td>
-                        <td>INFORMATION TECHNOLOGY</td>
-                        <td>sangeetha@gmail.com</td>
-                        <td>
-                            <button onclick="editRow(this)">Edit</button>
-                            <button onclick="deleteRow(this)">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- Add more faculty details here -->
+                    <!-- Faculty details will be added here from localStorage -->
                 </tbody>
             </table>
             <button onclick="uploadDetails('faculty')">Upload Faculty Details</button>
@@ -121,331 +100,257 @@
         </section>
 
         <section id="course-details">
-    <h2>Course Details</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Course ID</th>
-                <th>Course Name</th>
-                <th>Department</th>
-                <th>Course Fees</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>C101</td>
-                <td>PYTHON</td>
-                <td>INFORMATION TECHNOLOGY</td>
-                <td>$15000</td>
-                <td>
-                    <button onclick="editRow(this)">Edit</button>
-                    <button onclick="deleteRow(this)">Delete</button>
-                </td>
-            </tr>
-            <!-- Add more course details here -->
-        </tbody>
-    </table>
-    
-        <h2>Upload Course Fees Details</h2>
-        <form id="courseForm">
-            <label for="courseId">Course ID:</label>
-            <input type="text" id="courseId" name="courseId" required><br><br>
-            <label for="courseName">Course Name:</label>
-            <input type="text" id="courseName" name="courseName" required><br><br>
-            <label for="department">Department:</label>
-            <input type="text" id="department" name="department" required><br><br>
-            <label for="courseFees">Course Fees:</label>
-            <input type="text" id="courseFees" name="courseFees" required><br><br>
-            <button type="submit">Upload</button>
-        </form>
-    
-</section>
+            <h2>Course Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Department</th>
+                        <th>Course Fees</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Course details will be added here from localStorage -->
+                </tbody>
+            </table>
+            <h2>Upload Course Fees Details</h2>
+            <form id="courseForm" onsubmit="addCourse(event)">
+                <label for="courseId">Course ID:</label>
+                <input type="text" id="courseId" name="courseId" required><br><br>
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" name="courseName" required><br><br>
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" required><br><br>
+                <label for="courseFees">Course Fees:</label>
+                <input type="text" id="courseFees" name="courseFees" required><br><br>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+
         <section id="fees-details">
-    <h2>Fees Details</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Student ID</th>
-                <th>Name</th>
-                <th>Total Fees</th>
-                <th>Paid</th>
-                <th>Due</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>101</td>
-                <td>GOKUL</td>
-                <td>$15000</td>
-                <td>$14000</td>
-                <td>$2000</td>
-                <td>
-                    <button onclick="editRow(this)">Edit</button>
-                    <button onclick="deleteRow(this)">Delete</button>
-                </td>
-            </tr>
-            <!-- Add more fees details here -->
-        </tbody>
-    </table>
+            <h2>Fees Details</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Total Fees</th>
+                        <th>Paid</th>
+                        <th>Due</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fees details will be added here from localStorage -->
+                </tbody>
+            </table>
             <h2>Upload Fees Details</h2>
-    <form id="feesForm">
-        <label for="studentId">Student ID:</label>
-        <input type="text" id="studentId" name="studentId" required><br><br>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="totalFees">Total Fees:</label>
-        <input type="text" id="totalFees" name="totalFees" required><br><br>
-        <label for="paid">Paid:</label>
-        <input type="text" id="paid" name="paid" required><br><br>
-        <label for="due">Due:</label>
-        <input type="text" id="due" name="due" required><br><br>
-        <button type="submit">Upload</button>
-    </form>
-</section>
-
-
-
-
-
-        
-        
+            <form id="feesForm" onsubmit="addFees(event)">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="feesStudentId" name="studentId" required><br><br>
+                <label for="name">Name:</label>
+                <input type="text" id="feesName" name="name" required><br><br>
+                <label for="totalFees">Total Fees:</label>
+                <input type="text" id="totalFees" name="totalFees" required><br><br>
+                <label for="paid">Paid:</label>
+                <input type="text" id="paid" name="paid" required><br><br>
+                <label for="due">Due:</label>
+                <input type="text" id="due" name="due" required><br><br>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
     </div>
-  
-
+    
     <script>
-         function showSection(sectionId) {
-    const sections = document.querySelectorAll('.content section');
-    sections.forEach(section => {
-        section.style.display = (section.id === sectionId) ? 'block' : 'none';
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    showSection('student-details');
-});
-
-function performSearch() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    const sections = document.querySelectorAll('.content section');
-    let found = false;
-
-    sections.forEach(section => {
-        const rows = section.querySelectorAll('tbody tr');
-        rows.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            let match = false;
-            cells.forEach(cell => {
-                if (cell.textContent.toLowerCase().includes(query)) {
-                    match = true;
-                }
+        // Show sections
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content section');
+            sections.forEach(section => {
+                section.style.display = (section.id === sectionId) ? 'block' : 'none';
             });
-            row.style.display = match ? '' : 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('student-details');
+            loadAllData();
         });
 
-        if (Array.from(rows).some(row => row.style.display === '')) {
-            section.style.display = 'block';
-            found = true;
-        } else {
-            section.style.display = 'none';
-        }
-    });
+        // Perform search
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const sections = document.querySelectorAll('.content section');
+            let found = false;
 
-    if (!found) {
-        alert('No matching records found');
-    }
-}
+            sections.forEach(section => {
+                const rows = section.querySelectorAll('tbody tr');
+                rows.forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    let match = false;
+                    cells.forEach(cell => {
+                        if (cell.textContent.toLowerCase().includes(query)) {
+                            match = true;
+                        }
+                    });
+                    row.style.display = match ? '' : 'none';
+                });
 
-function uploadDetails(type) {
-    const input = type === 'student' ? document.getElementById('studentUpload') : document.getElementById('facultyUpload');
-    const file = input.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const contents = e.target.result;
-            const rows = contents.split('\n').map(row => row.split(','));
-            updateTable(type, rows);
-        };
-        reader.readAsText(file);
-    }
-}
-
-function updateTable(type, rows) {
-    const tbody = type === 'student' ? document.querySelector('#student-details tbody') : document.querySelector('#faculty-details tbody');
-    tbody.innerHTML = '';
-
-    rows.forEach(row => {
-        if (row.length > 1) {
-            const tr = document.createElement('tr');
-            row.forEach(cell => {
-                const td = document.createElement('td');
-                td.textContent = cell.trim();
-                tr.appendChild(td);
+                if (Array.from(rows).some(row => row.style.display === '')) {
+                    section.style.display = 'block';
+                    found = true;
+                } else {
+                    section.style.display = 'none';
+                }
             });
-            tr.innerHTML += `<td>
-                                <button onclick="editRow(this)">Edit</button>
-                                <button onclick="deleteRow(this)">Delete</button>
-                             </td>`;
-            tbody.appendChild(tr);
+
+            if (!found) {
+                alert('No matching records found');
+            }
         }
-    });
-}
 
-function addStudent(event) {
-    event.preventDefault();
-    const id = document.getElementById('studentId').value;
-    const name = document.getElementById('studentName').value;
-    const dept = document.getElementById('studentDept').value;
-    const email = document.getElementById('studentEmail').value;
+        // Upload details
+        function uploadDetails(type) {
+            const input = type === 'student' ? document.getElementById('studentDetailsFile') :
+                          type === 'faculty' ? document.getElementById('facultyDetailsFile') : 
+                          document.getElementById('courseDetailsFile');
+            
+            input.click();
+        }
 
-    const tbody = document.querySelector('#student-details tbody');
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${id}</td><td>${name}</td><td>${dept}</td><td>${email}</td><td>
-                        <button onclick="editRow(this)">Edit</button>
-                        <button onclick="deleteRow(this)">Delete</button>
-                    </td>`;
-    tbody.appendChild(tr);
+        // Add student
+        function addStudent(event) {
+            event.preventDefault();
+            const studentId = document.getElementById('studentId').value;
+            const studentName = document.getElementById('studentName').value;
+            const studentDept = document.getElementById('studentDept').value;
+            const studentEmail = document.getElementById('studentEmail').value;
 
-    document.getElementById('studentForm').reset();
-}
+            const studentData = {
+                id: studentId,
+                name: studentName,
+                department: studentDept,
+                email: studentEmail
+            };
 
-function addFaculty(event) {
-    event.preventDefault();
-    const id = document.getElementById('facultyId').value;
-    const name = document.getElementById('facultyName').value;
-    const dept = document.getElementById('facultyDept').value;
-    const email = document.getElementById('facultyEmail').value;
+            saveToLocalStorage('students', studentData);
+            appendRow('student-details', studentData);
+            document.getElementById('studentForm').reset();
+        }
 
-    const tbody = document.querySelector('#faculty-details tbody');
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${id}</td><td>${name}</td><td>${dept}</td><td>${email}</td><td>
-                        <button onclick="editRow(this)">Edit</button>
-                        <button onclick="deleteRow(this)">Delete</button>
-                    </td>`;
-    tbody.appendChild(tr);
+        // Add faculty
+        function addFaculty(event) {
+            event.preventDefault();
+            const facultyId = document.getElementById('facultyId').value;
+            const facultyName = document.getElementById('facultyName').value;
+            const facultyDept = document.getElementById('facultyDept').value;
+            const facultyEmail = document.getElementById('facultyEmail').value;
 
-    document.getElementById('facultyForm').reset();
-}
+            const facultyData = {
+                id: facultyId,
+                name: facultyName,
+                department: facultyDept,
+                email: facultyEmail
+            };
 
-function editRow(button) {
-    const row = button.closest('tr');
-    const cells = row.querySelectorAll('td');
-    const id = cells[0].textContent;
-    const name = cells[1].textContent;
-    const dept = cells[2].textContent;
-    const email = cells[3].textContent;
+            saveToLocalStorage('faculties', facultyData);
+            appendRow('faculty-details', facultyData);
+            document.getElementById('facultyForm').reset();
+        }
 
-    // Assuming you want to edit student details
-    document.getElementById('studentId').value = id;
-    document.getElementById('studentName').value = name;
-    document.getElementById('studentDept').value = dept;
-    document.getElementById('studentEmail').value = email;
+        // Add course
+        function addCourse(event) {
+            event.preventDefault();
+            const courseId = document.getElementById('courseId').value;
+            const courseName = document.getElementById('courseName').value;
+            const department = document.getElementById('department').value;
+            const courseFees = document.getElementById('courseFees').value;
 
-    // Remove the row so it can be added back after editing
-    row.remove();
-}
+            const courseData = {
+                id: courseId,
+                name: courseName,
+                department: department,
+                fees: courseFees
+            };
 
-function deleteRow(button) {
-    const row = button.closest('tr');
-    row.remove();
-}
+            saveToLocalStorage('courses', courseData);
+            appendRow('course-details', courseData);
+            document.getElementById('courseForm').reset();
+        }
 
-// Logout functionality
-const logoutButton = document.getElementById("logout");
-logoutButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "login.html"; // Redirect to logout endpoint
-});
+        // Add fees
+        function addFees(event) {
+            event.preventDefault();
+            const studentId = document.getElementById('feesStudentId').value;
+            const name = document.getElementById('feesName').value;
+            const totalFees = document.getElementById('totalFees').value;
+            const paid = document.getElementById('paid').value;
+            const due = document.getElementById('due').value;
 
-        document.getElementById('courseForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+            const feesData = {
+                studentId: studentId,
+                name: name,
+                totalFees: totalFees,
+                paid: paid,
+                due: due
+            };
 
-        const courseId = document.getElementById('courseId').value;
-        const courseName = document.getElementById('courseName').value;
-        const department = document.getElementById('department').value;
-        const courseFees = document.getElementById('courseFees').value;
+            saveToLocalStorage('fees', feesData);
+            appendRow('fees-details', feesData);
+            document.getElementById('feesForm').reset();
+        }
 
-        const table = document.querySelector('#course-details table tbody');
-        const newRow = document.createElement('tr');
+        // Save data to localStorage
+        function saveToLocalStorage(key, data) {
+            const currentData = JSON.parse(localStorage.getItem(key)) || [];
+            currentData.push(data);
+            localStorage.setItem(key, JSON.stringify(currentData));
+        }
 
-        newRow.innerHTML = `
-            <td>${courseId}</td>
-            <td>${courseName}</td>
-            <td>${department}</td>
-            <td>${courseFees}</td>
-            <td>
-                <button onclick="editRow(this)">Edit</button>
-                <button onclick="deleteRow(this)">Delete</button>
-            </td>
-        `;
+        // Load all data from localStorage
+        function loadAllData() {
+            loadDataFromLocalStorage('students', 'student-details');
+            loadDataFromLocalStorage('faculties', 'faculty-details');
+            loadDataFromLocalStorage('courses', 'course-details');
+            loadDataFromLocalStorage('fees', 'fees-details');
+        }
 
-        table.appendChild(newRow);
+        // Load specific data from localStorage
+        function loadDataFromLocalStorage(key, sectionId) {
+            const data = JSON.parse(localStorage.getItem(key)) || [];
+            data.forEach(item => appendRow(sectionId, item));
+        }
 
-        document.getElementById('courseForm').reset();
-    });
+        // Append row to the table
+        function appendRow(sectionId, data) {
+            const tableBody = document.querySelector(`#${sectionId} tbody`);
+            const row = document.createElement('tr');
 
-    function editRow(button) {
-        const row = button.parentElement.parentElement;
-        const cells = row.children;
+            for (const key in data) {
+                const cell = document.createElement('td');
+                cell.textContent = data[key];
+                row.appendChild(cell);
+            }
 
-        document.getElementById('courseId').value = cells[0].innerText;
-        document.getElementById('courseName').value = cells[1].innerText;
-        document.getElementById('department').value = cells[2].innerText;
-        document.getElementById('courseFees').value = cells[3].innerText;
+            const actionsCell = document.createElement('td');
+            actionsCell.innerHTML = `<button onclick="deleteRow(this, '${sectionId}')">Delete</button>`;
+            row.appendChild(actionsCell);
 
-        row.remove();
-    }
+            tableBody.appendChild(row);
+        }
 
-    function deleteRow(button) {
-        const row = button.parentElement.parentElement;
-        row.remove();
-    }
+        // Delete row from the table
+        function deleteRow(button, sectionId) {
+            const row = button.parentNode.parentNode;
+            const tableBody = row.parentNode;
+            tableBody.removeChild(row);
 
-        document.getElementById('courseForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const courseId = document.getElementById('courseId').value;
-        const courseName = document.getElementById('courseName').value;
-        const department = document.getElementById('department').value;
-        const courseFees = document.getElementById('courseFees').value;
-
-        const table = document.querySelector('#course-details table tbody');
-        const newRow = document.createElement('tr');
-
-        newRow.innerHTML = `
-            <td>${courseId}</td>
-            <td>${courseName}</td>
-            <td>${department}</td>
-            <td>${courseFees}</td>
-            <td>
-                <button onclick="editRow(this)">Edit</button>
-                <button onclick="deleteRow(this)">Delete</button>
-            </td>
-        `;
-
-        table.appendChild(newRow);
-
-        document.getElementById('courseForm').reset();
-    });
-
-    function editRow(button) {
-        const row = button.parentElement.parentElement;
-        const cells = row.children;
-
-        document.getElementById('courseId').value = cells[0].innerText;
-        document.getElementById('courseName').value = cells[1].innerText;
-        document.getElementById('department').value = cells[2].innerText;
-        document.getElementById('courseFees').value = cells[3].innerText;
-
-        row.remove();
-    }
-
-    function deleteRow(button) {
-        const row = button.parentElement.parentElement;
-        row.remove();
-    }
-
+            const key = sectionId.split('-')[0] + 's';
+            const id = row.children[0].textContent;
+            let data = JSON.parse(localStorage.getItem(key)) || [];
+            data = data.filter(item => item.id !== id);
+            localStorage.setItem(key, JSON.stringify(data));
+        }
     </script>
 </body>
 </html>
